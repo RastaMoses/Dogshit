@@ -121,10 +121,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invisible Ground
       objectReference: {fileID: 0}
-    - target: {fileID: 4033729065799803580, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_RootOrder
       value: 0
