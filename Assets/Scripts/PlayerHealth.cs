@@ -11,9 +11,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float regeneration = 10f;
     [SerializeField] float regenSpeed = 0.2f;
 
+    [SerializeField] Color maxLifeColor;
+    [SerializeField] Color minLifeColor;
     //State
     bool inSafeZone;
-    float health;
+    [SerializeField] float health; //Serialized for Debug Purpose
     Coroutine safeZoneRegen;
     //Cached Component Reference
 
@@ -22,12 +24,13 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        PlayerColor();
     }
 
     private IEnumerator SafezoneHeal()
@@ -58,5 +61,11 @@ public class PlayerHealth : MonoBehaviour
             inSafeZone = false;
             StopCoroutine(safeZoneRegen);
         }
+    }
+
+    void PlayerColor()
+    {
+        float t = health / maxHealth;
+        GetComponent<SpriteRenderer>().material.color = Color.Lerp(minLifeColor, maxLifeColor, t);
     }
 }
