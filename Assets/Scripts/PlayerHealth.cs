@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
     Coroutine safeZoneRegen;
     //Cached Component Reference
     Level level;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +100,7 @@ public class PlayerHealth : MonoBehaviour
     {
         float t = health / maxHealth;
         GetComponent<SpriteRenderer>().material.color = Color.Lerp(minLifeColor, maxLifeColor, t);
+        GetComponent<Light2D>().intensity = t;
     }
 
     void CheckPlayerHealth()
