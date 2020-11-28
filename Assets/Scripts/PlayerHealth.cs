@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Color minLifeColor;
     [Header("Misc")]
     [SerializeField] GameObject playerBlockPrefab;
+    [SerializeField] float deathAnimationDuration = 3f;
     
     //State
     bool inSafeZone;
@@ -124,7 +125,12 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            StartCoroutine(level.ResetLevel());
+            StartCoroutine(GameOver());
         }
+    }
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(deathAnimationDuration);
+        FindObjectOfType<SceneLoader>().ReloadLevel();
     }
 }

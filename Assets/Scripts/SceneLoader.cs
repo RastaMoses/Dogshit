@@ -7,6 +7,17 @@ public class SceneLoader : MonoBehaviour
 {
   public void ReloadLevel()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadMainMenu()
+    {
+        Debug.Log("Assign right index number to load menu");
+        SceneManager.LoadScene(1);
     }
 }
