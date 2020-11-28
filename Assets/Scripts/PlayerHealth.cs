@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         while (inSafeZone)
         {
             health += regeneration;
-            Mathf.Clamp(health, 0f, maxHealth);
+            health = Mathf.Clamp(health, 0f, maxHealth);
             yield return new WaitForSeconds(regenSpeed);
 
         }
