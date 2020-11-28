@@ -13,17 +13,22 @@ public class PlayerHealth : MonoBehaviour
     [Header("Colors")]
     [SerializeField] Color maxLifeColor;
     [SerializeField] Color minLifeColor;
+    [Header("Misc")]
+    [SerializeField] GameObject playerBlockPrefab;
+    
     //State
     bool inSafeZone;
     bool safe;
+    
     [SerializeField] float health; //Serialized for Debug Purpose
     Coroutine safeZoneRegen;
     //Cached Component Reference
-
+    Level level;
 
     // Start is called before the first frame update
     void Start()
     {
+        level = FindObjectOfType<Level>();
         health = maxHealth;
         StartCoroutine(Melt());
     }
@@ -32,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         PlayerColor();
+        CheckPlayerHealth();
     }
 
     private IEnumerator SafezoneHeal()
@@ -50,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Melt()
     {
-        var level = FindObjectOfType<Level>();
+        
         while(true)
         {
             while (!safe)
@@ -92,5 +98,28 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<SpriteRenderer>().material.color = Color.Lerp(minLifeColor, maxLifeColor, t);
     }
 
+    void CheckPlayerHealth()
+    {
+        if (health <= 0)
+        {
+            PlayerDeath();
+        }
+    }
 
+    public void PlayerDeath()
+    {
+        if (level.GetRespawn() == true)
+        {
+            Instantiate(playerBlockPrefab, transform.position,Quaternion.identity);
+            
+            level.RespawnPlayer();
+            Destroy(gameObject);
+            gameObject.SetActive(false);
+            
+        }
+        else
+        {
+            StartCoroutine(level.ResetLevel());
+        }
+    }
 }
