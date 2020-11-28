@@ -59,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
                 health -= level.GetLevelDamage();
                 yield return new WaitForSeconds(level.GetDamageInterval());
             }
+            yield return new WaitForSeconds(level.GetDamageInterval());
         }
         
 
