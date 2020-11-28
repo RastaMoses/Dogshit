@@ -18,13 +18,10 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
-    }
-
-    void FixedUpdate()
-    {
-
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
     }
+
+    
 
 }
