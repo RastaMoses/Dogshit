@@ -14,10 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Reset Level.unity
     guid: ffb6c0c1de02f4f42bad7f4a1ba43453
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene 4.unity
     guid: 4cb3768656f2c594bbe75b62a778ba77
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene 5.unity
     guid: 2dbd9ee7a2fce8544a9d57ee7b061c0f
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 8be9af41e48c4be439f55ba19391edd6
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: 922d57c14f9594c4aa44c3e3fad99971
+  - enabled: 1
+    path: Assets/Scenes/Level 6.unity
+    guid: 812490e8c66b0f84daee63283e780874
   m_configObjects: {}
