@@ -18,9 +18,9 @@ TagManager:
   - Ground
   - Background
   - Air
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - PlayerTrigger
   - 
   - 
   - 

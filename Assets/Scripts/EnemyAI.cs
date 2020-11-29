@@ -17,14 +17,19 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void FollowPlayer()
+    {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-
         InvokeRepeating("UpdatePath", 0f, .5f);
-       
     }
 
     void UpdatePath()
