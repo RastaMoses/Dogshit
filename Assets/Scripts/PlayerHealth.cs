@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Colors")]
     [SerializeField] Color maxLifeColor;
     [SerializeField] Color minLifeColor;
-    [SerializeField] float lightIntensity = 2f;
+
     [Header("Misc")]
     [SerializeField] GameObject playerBlockPrefab;
     [SerializeField] float deathAnimationDuration = 3f;
@@ -23,17 +23,21 @@ public class PlayerHealth : MonoBehaviour
     //State
     bool inSafeZone;
     bool safe;
-    
+    float maxLightIntensity;
+    float maxLightRadius;
     [SerializeField] float health; //Serialized for Debug Purpose
     Coroutine safeZoneRegen;
     //Cached Component Reference
     Level level;
-    
+    Light2D light;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        light = GetComponent<Light2D>();
+        maxLightIntensity = light.intensity;
+        maxLightRadius = light.pointLightOuterRadius;
         level = FindObjectOfType<Level>();
         health = maxHealth;
         StartCoroutine(Melt());
@@ -101,8 +105,9 @@ public class PlayerHealth : MonoBehaviour
     void PlayerColor()
     {
         float t = health / maxHealth;
-        GetComponent<SpriteRenderer>().material.color = Color.Lerp(minLifeColor, maxLifeColor, t);
-        GetComponent<Light2D>().intensity = t * lightIntensity;
+        GetComponent<SpriteRenderer>().color = Color.Lerp(minLifeColor, maxLifeColor, t);
+        light.intensity = t * maxLightIntensity;
+        light.pointLightOuterRadius = t * maxLightRadius;
         
     }
 
