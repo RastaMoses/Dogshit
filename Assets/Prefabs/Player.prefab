@@ -253,6 +253,7 @@ MonoBehaviour:
   regenSpeed: 0.01
   maxLifeColor: {r: 0.31626022, g: 0.6210524, b: 0.9716981, a: 1}
   minLifeColor: {r: 0, g: 0, b: 0, a: 1}
+  minLight: 0.2
   playerBlockPrefab: {fileID: 4325308652763086256, guid: d033cbec53c534d469b44897706fcdf8, type: 3}
   deathAnimationDuration: 3
   health: 100
@@ -274,7 +275,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3.66
   m_LightVolumeOpacity: 0.12
-  m_ApplyToSortingLayers: 00000000a3ab061e
+  m_ApplyToSortingLayers: 00000000a3ab061ed98101ac
   m_LightCookieSprite: {fileID: 21300000, guid: c3dada778304a754db3f57bb4004e7f0, type: 3}
   m_UseNormalMap: 0
   m_LightOrder: 0
