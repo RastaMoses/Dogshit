@@ -131,6 +131,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDeath()
     {
+        GetComponent<PlayerSound>().PlayDeathSFX();
         if (level.GetRespawn() == true)
         {
             Instantiate(playerBlockPrefab, transform.position,Quaternion.identity);

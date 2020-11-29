@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
+            
             jump = true;
         }
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
