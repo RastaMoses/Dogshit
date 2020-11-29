@@ -4856,11 +4856,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ad0493a5a0184294b92c5c2df5fc534a, type: 3}
     - target: {fileID: 8440594011323490379, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}
       propertyPath: changeMusic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8440594011323490379, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}
       propertyPath: damageInterval
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}

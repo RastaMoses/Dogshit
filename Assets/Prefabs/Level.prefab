@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDamage: 2
   damageInterval: 0.1
-  respawnLimit: 3
+  respawnLimit: 2
   respawnPoint: {fileID: 4804511238442078360}
   playerPrefab: {fileID: 1135600082845632729, guid: 94c0b4c32b25f284b95e368b3fd9590a, type: 3}
   respawnDelay: 2
