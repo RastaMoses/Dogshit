@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
+
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,8 +15,10 @@ public class PlayerHealth : MonoBehaviour
     [Header("Colors")]
     [SerializeField] Color maxLifeColor;
     [SerializeField] Color minLifeColor;
+    [SerializeField] float lightIntensity = 2f;
     [Header("Misc")]
     [SerializeField] GameObject playerBlockPrefab;
+    [SerializeField] float deathAnimationDuration = 3f;
     
     //State
     bool inSafeZone;
@@ -24,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
     Coroutine safeZoneRegen;
     //Cached Component Reference
     Level level;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -96,7 +102,11 @@ public class PlayerHealth : MonoBehaviour
     {
         float t = health / maxHealth;
         GetComponent<SpriteRenderer>().material.color = Color.Lerp(minLifeColor, maxLifeColor, t);
+        GetComponent<Light2D>().intensity = t * lightIntensity;
+        
     }
+
+    
 
     void CheckPlayerHealth()
     {
@@ -119,7 +129,12 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            StartCoroutine(level.ResetLevel());
+            StartCoroutine(GameOver());
         }
+    }
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(deathAnimationDuration);
+        FindObjectOfType<SceneLoader>().ReloadLevel();
     }
 }
