@@ -43,12 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightType: 3
+  m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.817
   m_Color: {r: 0, g: 0.9604411, b: 1, a: 1}
-  m_Intensity: 0.51
-  m_LightVolumeOpacity: 0.3
+  m_Intensity: 0
+  m_LightVolumeOpacity: 0.195
   m_ApplyToSortingLayers: c747f34ba3ab061e00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -56,22 +56,22 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
+  m_PointLightInnerAngle: 92
+  m_PointLightOuterAngle: 169
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 2.7667649
+  m_PointLightOuterRadius: 2.59
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffSize: 1.09
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  - {x: -0.8805192, y: -0.37732163, z: 0}
+  - {x: 0.90608364, y: -0.43209574, z: 0}
+  - {x: 1.099854, y: 2.2238295, z: 0}
+  - {x: -0.8651902, y: 2.3279092, z: 0}
 --- !u!1 &6184020449117699076
 GameObject:
   m_ObjectHideFlags: 0
