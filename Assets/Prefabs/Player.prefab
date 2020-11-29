@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 1351621718}
   - component: {fileID: 1351621721}
   - component: {fileID: 4549822576142327009}
+  - component: {fileID: 1565661608}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -255,7 +256,7 @@ MonoBehaviour:
   minLifeColor: {r: 0, g: 0, b: 0, a: 1}
   minLight: 0.2
   playerBlockPrefab: {fileID: 4325308652763086256, guid: d033cbec53c534d469b44897706fcdf8, type: 3}
-  deathAnimationDuration: 3
+  deathAnimationDuration: 1
   health: 100
 --- !u!114 &4549822576142327009
 MonoBehaviour:
@@ -298,6 +299,21 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &1565661608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135600082845632729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a5c7a7448a7c34fb8b5069e8c6bc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSFX: {fileID: 0}
+  jumpSFX: []
+  landSFX: []
 --- !u!1 &1135600083568615258
 GameObject:
   m_ObjectHideFlags: 0
