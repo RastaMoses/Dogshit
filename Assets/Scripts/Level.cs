@@ -11,7 +11,8 @@ public class Level : MonoBehaviour
     [SerializeField] Transform respawnPoint;
     [SerializeField] GameObject playerPrefab;
     [SerializeField] float respawnDelay = 2f;
-
+    [SerializeField] AudioClip music;
+    [SerializeField] bool changeMusic;
     //States
     int respawnCount;
 
@@ -19,6 +20,10 @@ public class Level : MonoBehaviour
     private void Start()
     {
         respawnCount = 0;
+        if (changeMusic)
+        {
+            FindObjectOfType<Music>().ChangeMusic(music);
+        }
     }
     public float GetLevelDamage()
     {
