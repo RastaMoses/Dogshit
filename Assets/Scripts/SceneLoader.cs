@@ -19,6 +19,6 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainMenu()
     {
         Debug.Log("Assign right index number to load menu");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

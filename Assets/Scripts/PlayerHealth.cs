@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     //Cached Component Reference
     Level level;
     Light2D light;
-    
+    float colorChange;
 
     // Start is called before the first frame update
     void Start()
@@ -110,12 +110,17 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+
+    public float GetColorChange()
+    {
+        return colorChange;
+    }
     void PlayerColor()
     {
-        float t = health / maxHealth;
-        GetComponent<SpriteRenderer>().color = Color.Lerp(minLifeColor, maxLifeColor, t);
-        light.intensity = t * maxLightIntensity;
-        light.pointLightOuterRadius = t * maxLightRadius + minLight;
+        colorChange = health / maxHealth;
+        GetComponent<SpriteRenderer>().color = Color.Lerp(minLifeColor, maxLifeColor, colorChange);
+        light.intensity = colorChange * maxLightIntensity;
+        light.pointLightOuterRadius = colorChange * maxLightRadius + minLight;
         
     }
 

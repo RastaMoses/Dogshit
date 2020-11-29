@@ -96,5 +96,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minColor: {r: 1, g: 0, b: 0, a: 0}
-  maxColor: {r: 1, g: 0.029075194, b: 0, a: 0.019607844}
-  changeSpeed: 3
+  maxColor: {r: 1, g: 0.029075194, b: 0, a: 0.2}

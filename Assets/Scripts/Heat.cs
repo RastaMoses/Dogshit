@@ -7,7 +7,9 @@ public class Heat : MonoBehaviour
 
     [SerializeField] Color minColor;
     [SerializeField] Color maxColor;
-    [SerializeField] float changeSpeed = 2f;
+
+    float changeAmount;
+    PlayerHealth player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +19,18 @@ public class Heat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = FindObjectOfType<PlayerHealth>();
         ColorFlash();
+        
     }
 
     void ColorFlash()
     {
-        GetComponent<SpriteRenderer>().color = Color.Lerp(minColor, maxColor,Mathf.PingPong(Time.time, changeSpeed));
+        if (player != null)
+        {
 
+            changeAmount = player.GetColorChange();
+            GetComponent<SpriteRenderer>().color = Color.Lerp(maxColor, minColor, changeAmount);
+        }
     }
 }
