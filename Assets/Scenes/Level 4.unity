@@ -2833,10 +2833,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 76016956}
     m_Modifications:
-    - target: {fileID: 777230997, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.54
-      objectReference: {fileID: 0}
     - target: {fileID: 7593118989090493018, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
       propertyPath: m_Name
       value: GateOpener (1)
@@ -2847,11 +2843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7593118989090493019, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.65
+      value: 3.66
       objectReference: {fileID: 0}
     - target: {fileID: 7593118989090493019, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0386267
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 7593118989090493019, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3361,10 +3357,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 76016956}
     m_Modifications:
-    - target: {fileID: 777230997, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.55
-      objectReference: {fileID: 0}
     - target: {fileID: 7593118989090493018, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
       propertyPath: m_Name
       value: GateOpener
