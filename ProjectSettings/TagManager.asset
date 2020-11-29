@@ -52,3 +52,6 @@ TagManager:
   - name: Foreground
     uniqueID: 2885779929
     locked: 0
+  - name: Heat
+    uniqueID: 1509317159
+    locked: 0
