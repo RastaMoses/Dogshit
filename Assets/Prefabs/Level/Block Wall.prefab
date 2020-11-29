@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1487837605096658394}
   - component: {fileID: 4888150050803928398}
   m_Layer: 0
-  m_Name: Block Ground
+  m_Name: Block Wall
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: df25c473490d938439a85b3808349a6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
