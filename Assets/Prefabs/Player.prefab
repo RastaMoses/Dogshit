@@ -155,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -204,7 +204,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f83ba030eb121941a6eb49356c937cd, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 095e2217c12ab054ebcc323c1b8ca3a9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.08962262, g: 0.40143445, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -251,9 +251,8 @@ MonoBehaviour:
   maxHealth: 100
   regeneration: 10
   regenSpeed: 0.2
-  maxLifeColor: {r: 0.2028302, g: 0.8601456, b: 1, a: 1}
-  minLifeColor: {r: 1, g: 1, b: 1, a: 1}
-  lightIntensity: 2
+  maxLifeColor: {r: 0, g: 0.44406664, b: 0.9528302, a: 1}
+  minLifeColor: {r: 0, g: 0, b: 0, a: 1}
   playerBlockPrefab: {fileID: 4325308652763086256, guid: d033cbec53c534d469b44897706fcdf8, type: 3}
   deathAnimationDuration: 3
   health: 100
@@ -271,11 +270,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 1
-  m_FalloffIntensity: 0.698
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeOpacity: 0.16
-  m_ApplyToSortingLayers: 00000000a3ab061ec747f34b
+  m_FalloffIntensity: 0.834
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 3.66
+  m_LightVolumeOpacity: 0.12
+  m_ApplyToSortingLayers: 00000000a3ab061e
   m_LightCookieSprite: {fileID: 21300000, guid: c3dada778304a754db3f57bb4004e7f0, type: 3}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -285,7 +284,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 2.5
+  m_PointLightOuterRadius: 7.34
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
