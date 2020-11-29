@@ -231,6 +231,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1343626196077888385, guid: dc53d079e81d6a44b95686bed6773871, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5636983803609706783, guid: dc53d079e81d6a44b95686bed6773871, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297278640913569126, guid: dc53d079e81d6a44b95686bed6773871, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9138806108263410617, guid: dc53d079e81d6a44b95686bed6773871, type: 3}
       propertyPath: m_Name
       value: Level Boundaries
