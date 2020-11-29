@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResetLevel : MonoBehaviour
 {
-    [SerializeField] float pressKeyDuration = 2f;
+    [SerializeField] float pressKeyDuration = 3f;
 
     // Update is called once per frame
     void Update()
