@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Colors")]
     [SerializeField] Color maxLifeColor;
     [SerializeField] Color minLifeColor;
-
+    [SerializeField] float minLight = 0.2f;
     [Header("Misc")]
     [SerializeField] GameObject playerBlockPrefab;
     [SerializeField] float deathAnimationDuration = 3f;
@@ -115,7 +115,7 @@ public class PlayerHealth : MonoBehaviour
         float t = health / maxHealth;
         GetComponent<SpriteRenderer>().color = Color.Lerp(minLifeColor, maxLifeColor, t);
         light.intensity = t * maxLightIntensity;
-        light.pointLightOuterRadius = t * maxLightRadius;
+        light.pointLightOuterRadius = t * maxLightRadius + minLight;
         
     }
 
