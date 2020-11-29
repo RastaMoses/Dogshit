@@ -576,22 +576,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8440594011323490379, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}
-      propertyPath: music
-      value: 
-      objectReference: {fileID: 8300000, guid: 10a9ccbf33c266f46af1b099756aa237, type: 3}
-    - target: {fileID: 8440594011323490379, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}
-      propertyPath: changeMusic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440594011323490379, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}
-      propertyPath: levelDamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440594011323490379, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}
-      propertyPath: damageInterval
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d78d4894c22fac45aa0757abfcb6e2c, type: 3}
 --- !u!1001 &648867176

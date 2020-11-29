@@ -152,6 +152,6 @@ MonoBehaviour:
   respawnLimit: 2
   respawnPoint: {fileID: 4804511238442078360}
   playerPrefab: {fileID: 1135600082845632729, guid: 94c0b4c32b25f284b95e368b3fd9590a, type: 3}
-  respawnDelay: 2
-  music: {fileID: 0}
+  respawnDelay: 1
+  music: {fileID: 8300000, guid: 10a9ccbf33c266f46af1b099756aa237, type: 3}
   changeMusic: 0
