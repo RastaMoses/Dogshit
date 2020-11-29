@@ -2221,6 +2221,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 777230997, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 777230997, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.65
+      objectReference: {fileID: 0}
     - target: {fileID: 7593118989090493018, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
       propertyPath: m_Name
       value: GateOpener
@@ -2314,6 +2322,6 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7593118989362803600 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 776445248, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
+  m_CorrespondingSourceObject: {fileID: 777230997, guid: ba76dc8d9a3ab134ea69cf9fef470f36, type: 3}
   m_PrefabInstance: {fileID: 7593118989362803598}
   m_PrefabAsset: {fileID: 0}

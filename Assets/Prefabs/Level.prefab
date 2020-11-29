@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4804511238442078360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4795356986762213286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.06, y: -0.86, z: 0}
+  m_LocalPosition: {x: -7.96, y: -3.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8440594011323490378}
@@ -74,8 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae191778411bf746a2d728262d3ac17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDamage: 20
-  damageInterval: 1
+  levelDamage: 2
+  damageInterval: 0.1
   respawnLimit: 3
   respawnPoint: {fileID: 4804511238442078360}
   playerPrefab: {fileID: 1135600082845632729, guid: 94c0b4c32b25f284b95e368b3fd9590a, type: 3}
