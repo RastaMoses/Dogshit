@@ -13,6 +13,10 @@ public class Music : MonoBehaviour
             Destroy(gameObject);
             gameObject.SetActive(false);
         }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
     public void ChangeMusic(AudioClip newMusic)
     {
