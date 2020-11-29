@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float nextWaypointDistance = 3f;
 
     Path path;
+    Transform startPosition;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
 
@@ -22,11 +23,12 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPosition = gameObject.transform;
     }
 
     public void FollowPlayer()
     {
+
         target = FindObjectOfType<PlayerHealth>().transform;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -35,13 +37,18 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if(seeker.IsDone())
+        if (target == null)
+        {
+            target = startPosition;
+        }
+        if (seeker.IsDone())
         seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
     void OnPathComplete(Path p)
     {
-        if(!p.error)
+        
+        if (!p.error)
         {
             path = p;
             currentWaypoint = 0;
@@ -51,6 +58,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         if (path == null)
             return;
 
