@@ -11,6 +11,7 @@ public class Gate : MonoBehaviour
     [SerializeField] float delay = 0f;
 
     //State
+    RemoteActivator remoteActivator;
     bool addDelay;
     bool activated;
     Vector3 nextPos;
@@ -32,6 +33,12 @@ public class Gate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!activateOnStart)
+        {
+            remoteActivator = GetComponent<RemoteActivator>();
+            activated = remoteActivator.GetActivated();
+        }
+        
         if (activated)
         {
             if (addDelay)
@@ -67,8 +74,5 @@ public class Gate : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
-    public void Activate()
-    {
-        activated = true;
-    }
+    
 }

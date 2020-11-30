@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class RemoteActivator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    bool activated;
+    private void Start()
     {
-        
+        activated = false;
+    }
+    public void Activate()
+    {
+        activated = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool GetActivated()
     {
-        
+        return activated;
     }
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ButtonBlock : MonoBehaviour
 {
-    [SerializeField] List<GameObject> devicesActivated;
+    [SerializeField] List<RemoteActivator> devicesActivated;
+    [SerializeField] Sprite pushedButtonSprite;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         for (int i = 0;  i < devicesActivated.Count; i++)
         {
-            devicesActivated
+            devicesActivated[i].Activate();
         }
+        GetComponent<SpriteRenderer>().sprite = pushedButtonSprite;
     }
 }

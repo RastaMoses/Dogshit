@@ -19,7 +19,7 @@ public class ResetLevel : MonoBehaviour
         yield return new WaitForSeconds(pressKeyDuration);
         if (Input.GetKey(KeyCode.R))
         {
-            FindObjectOfType<PlayerHealth>().PlayerDeath();
+            GetComponent<PlayerHealth>().PlayerDeath();
         }
         
     }
