@@ -6,15 +6,22 @@ public class Gate : MonoBehaviour
     public Transform pos2;
     public float speed;
     public Transform startPos;
+    [SerializeField] bool activateOnStart = false;
     [SerializeField] bool delayBeforeMove = false;
     [SerializeField] float delay = 0f;
 
     //State
     bool addDelay;
+    bool activated;
     Vector3 nextPos;
     // Start is called before the first frame update
     void Start()
     {
+        activated = false;
+        if (activateOnStart)
+        {
+            activated = true;
+        }
         nextPos = startPos.position;
         if (delayBeforeMove)
         {
@@ -25,14 +32,18 @@ public class Gate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (addDelay)
+        if (activated)
         {
-            StartCoroutine(MoveWithDelay());
+            if (addDelay)
+            {
+                StartCoroutine(MoveWithDelay());
+            }
+            else
+            {
+                Move();
+            }
         }
-        else
-        {
-            Move();
-        }
+        
         
     }
     IEnumerator MoveWithDelay()
@@ -54,5 +65,10 @@ public class Gate : MonoBehaviour
             nextPos = pos1.position;
         }
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+    }
+
+    public void Activate()
+    {
+        activated = true;
     }
 }

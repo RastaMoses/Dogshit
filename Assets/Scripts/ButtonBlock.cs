@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ButtonBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] List<GameObject> devicesActivated;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        for (int i = 0;  i < devicesActivated.Count; i++)
+        {
+            devicesActivated
+        }
     }
 }
