@@ -32,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         target = FindObjectOfType<PlayerHealth>().transform;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+       
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
 
