@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float maxHealth = 100f;
     [SerializeField] float regeneration = 10f;
     [SerializeField] float regenSpeed = 0.2f;
+    [SerializeField] float resetSpeed = 10f;
     [Header("Colors")]
     [SerializeField] Color maxLifeColor;
     [SerializeField] Color minLifeColor;
@@ -19,8 +20,9 @@ public class PlayerHealth : MonoBehaviour
     [Header("Misc")]
     [SerializeField] GameObject playerBlockPrefab;
     [SerializeField] float deathAnimationDuration = 3f;
-    
+
     //State
+    bool killingSelf;
     bool inSafeZone;
     bool safe;
     float maxLightIntensity;
@@ -29,15 +31,15 @@ public class PlayerHealth : MonoBehaviour
     Coroutine safeZoneRegen;
     //Cached Component Reference
     Level level;
-    Light2D light;
+    Light2D playerLight;
     float colorChange;
 
     // Start is called before the first frame update
     void Start()
     {
-        light = GetComponent<Light2D>();
-        maxLightIntensity = light.intensity;
-        maxLightRadius = light.pointLightOuterRadius;
+        playerLight = GetComponent<Light2D>();
+        maxLightIntensity = playerLight.intensity;
+        maxLightRadius = playerLight.pointLightOuterRadius;
         level = FindObjectOfType<Level>();
         health = maxHealth;
         StartCoroutine(Melt());
@@ -48,15 +50,25 @@ public class PlayerHealth : MonoBehaviour
     {
         PlayerColor();
         CheckPlayerHealth();
+        KillSelf();
     }
 
     private IEnumerator SafezoneHeal()
     {
         while (inSafeZone)
+
         {
-            health += regeneration;
-            health = Mathf.Clamp(health, 0f, maxHealth);
-            yield return new WaitForSeconds(regenSpeed);
+            if (killingSelf)
+            {
+                yield return new WaitForSeconds(regenSpeed);
+            }
+            else
+            {
+                health += regeneration;
+                health = Mathf.Clamp(health, 0f, maxHealth);
+                yield return new WaitForSeconds(regenSpeed);
+
+            }
 
         }
 
@@ -119,8 +131,8 @@ public class PlayerHealth : MonoBehaviour
     {
         colorChange = health / maxHealth;
         GetComponent<SpriteRenderer>().color = Color.Lerp(minLifeColor, maxLifeColor, colorChange);
-        light.intensity = colorChange * maxLightIntensity;
-        light.pointLightOuterRadius = colorChange * maxLightRadius + minLight;
+        playerLight.intensity = colorChange * maxLightIntensity;
+        playerLight.pointLightOuterRadius = colorChange * maxLightRadius + minLight;
         
     }
 
@@ -156,4 +168,18 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(deathAnimationDuration);
         FindObjectOfType<SceneLoader>().ReloadLevel();
     }
+
+    void KillSelf()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            killingSelf = true;
+            health = health - (resetSpeed  * Time.deltaTime);
+        }
+        else
+        {
+            killingSelf = false;
+        }
+    }
+    
 }
