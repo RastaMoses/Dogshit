@@ -342,18 +342,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3058359135390450632, guid: 47debf8a9078f0c44baf2c5c9ad179bb, type: 3}
-      propertyPath: delay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3058359135390450632, guid: 47debf8a9078f0c44baf2c5c9ad179bb, type: 3}
-      propertyPath: activateOnStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3058359135390450632, guid: 47debf8a9078f0c44baf2c5c9ad179bb, type: 3}
-      propertyPath: delayBeforeMove
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3058359135390450633, guid: 47debf8a9078f0c44baf2c5c9ad179bb, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -542,17 +530,9 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 4290676254086318353, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
-      propertyPath: devicesActivated.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290676254086318353, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
       propertyPath: devicesActivated.Array.data[0]
       value: 
       objectReference: {fileID: 41564215}
-    - target: {fileID: 4290676254086318354, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b2087cab69ef7b145972692ce97b003e, type: 3}
     - target: {fileID: 4290676254086318355, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
       propertyPath: m_RootOrder
       value: 5
