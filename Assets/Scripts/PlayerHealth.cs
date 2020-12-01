@@ -181,5 +181,8 @@ public class PlayerHealth : MonoBehaviour
             killingSelf = false;
         }
     }
-    
+    public void Heal(float healAmount)
+    {
+        health += healAmount;
+    }
 }
