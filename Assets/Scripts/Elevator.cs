@@ -6,7 +6,8 @@ public class Elevator : MonoBehaviour
     public Transform pos2;
     public float speed;
     public Transform startPos;
-
+    [SerializeField] bool activateOnStart;
+    bool activated;
     Vector3 nextPos;
     // Start is called before the first frame update
     void Start()
@@ -17,15 +18,29 @@ public class Elevator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position == pos1.position)
+        if (activateOnStart)
         {
-            nextPos = pos2.position;
+            activated = true;
         }
-        if (transform.position == pos2.position)
+        else
         {
-            nextPos = pos1.position;
+            activated = GetComponentInParent<RemoteActivator>().GetActivated();
         }
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+        
+        if (activated)
+        {
+            if (transform.position == pos1.position)
+            {
+                nextPos = pos2.position;
+            }
+            if (transform.position == pos2.position)
+            {
+                nextPos = pos1.position;
+            }
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+        }
+        
     }
 
+    
 }
