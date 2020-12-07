@@ -160,6 +160,8 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            
             StartCoroutine(GameOver());
         }
     }
