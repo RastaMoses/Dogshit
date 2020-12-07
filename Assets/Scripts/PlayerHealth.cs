@@ -165,6 +165,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private IEnumerator GameOver()
     {
+        
         yield return new WaitForSeconds(deathAnimationDuration);
         FindObjectOfType<SceneLoader>().ReloadLevel();
     }
@@ -183,7 +184,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private IEnumerator Heal(float healAmount,float regenSpeed, float healIncrements)
     {
-        for (int i = 0 ; i < healAmount; i++)
+        for (float i = 0; i < healAmount; i += healIncrements)
         {
             health += healIncrements;
             health = Mathf.Clamp(health, 0, 100);
