@@ -181,8 +181,18 @@ public class PlayerHealth : MonoBehaviour
             killingSelf = false;
         }
     }
-    public void Heal(float healAmount)
+    private IEnumerator Heal(float healAmount,float regenSpeed, float healIncrements)
     {
-        health += healAmount;
+        for (int i = 0 ; i < healAmount; i++)
+        {
+            health += healIncrements;
+            health = Mathf.Clamp(health, 0, 100);
+            yield return new WaitForSeconds(regenSpeed);
+        }
+    }
+
+    public void HealthorbHeal(float healAmount, float regenSpeed, float healIncrements)
+    {
+        StartCoroutine(Heal(healAmount, regenSpeed, healIncrements));
     }
 }

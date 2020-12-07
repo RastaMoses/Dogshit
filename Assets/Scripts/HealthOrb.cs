@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class HealthOrb : MonoBehaviour
 {
-    [SerializeField][Range(0,100)] float healAmount = 50;
+    [SerializeField][Range(0,100)] float healAmount = 50f;
+    [SerializeField] float regenSpeed = 0.03f;
+    [SerializeField] float healIncrements = 5f;
     PlayerHealth player;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player = FindObjectOfType<PlayerHealth>();
-        player.Heal(healAmount);
+        player.HealthorbHeal(healAmount, regenSpeed, healIncrements);
         Destroy(gameObject);
     }
 
