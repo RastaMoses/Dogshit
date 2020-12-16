@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -8,13 +9,13 @@ public class CharacterController2D : MonoBehaviour
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
-	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
-	
+	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
+	[SerializeField] float delayBetweenJumps = 0.05f;
 	
 
 	const float k_GroundedRadius = 0.6f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
-	
+	private bool m_Jump;
 	private Rigidbody2D m_Rigidbody2D;
 	 // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -35,36 +36,39 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
-
+		m_Jump = true;
 		
 	}
 
-	private void FixedUpdate()
-	{
+    private void OnTriggerExit2D(Collider2D collision)
+    {
 		bool wasGrounded = m_Grounded;
-		m_Grounded = false;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+			m_Grounded = false;
+        }
+    }
 
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				m_Grounded = true;
-				
-				if (!wasGrounded)
-					
-					
-					OnLandEvent.Invoke();
-					
-                
-			}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+		bool wasGrounded = m_Grounded;
+
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+			
+			
+			m_Grounded = true;
 		}
+		if (!wasGrounded && m_Grounded)
+        {
+			OnLandEvent.Invoke();
+		}
+
+
+			
+
 	}
-
-
-	public void Move(float move, bool crouch, bool jump)
+    public void Move(float move, bool crouch, bool jump)
 	{
 		
 
@@ -85,13 +89,27 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			if (m_Jump)
+            {
+				Debug.Log("Jump");
+				StartCoroutine(Jump());
+
+			}
 			// Add a vertical force to the player.
-			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			GetComponent<PlayerSound>().PlayJumpSFX();
+			
 		}
 	}
 
+	private IEnumerator Jump()
+    {
+		
+		m_Grounded = false;
+		m_Jump = false;
+		m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+		GetComponent<PlayerSound>().PlayJumpSFX();
+		yield return new WaitForSeconds(delayBetweenJumps);
+		m_Jump = true;
+    } 
 
 	
 }
