@@ -1366,6 +1366,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1433605247534084358}
     m_Modifications:
+    - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803580, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_Name
       value: Invisible Ground (2)
@@ -1376,11 +1384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.036
+      value: 1.0510001
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.326
+      value: 1.513
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1428,6 +1436,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1433605247534084358}
     m_Modifications:
+    - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803580, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_Name
       value: Invisible Ground (1)
@@ -1438,11 +1454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.967
+      value: -0.9519999
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.326
+      value: 1.513
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1490,6 +1506,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1433605247534084358}
     m_Modifications:
+    - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803580, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_Name
       value: Invisible Ground
@@ -1500,11 +1524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.106
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.326
+      value: 1.513
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803582, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_LocalPosition.z
