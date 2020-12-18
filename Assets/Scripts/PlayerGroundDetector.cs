@@ -22,7 +22,6 @@ public class PlayerGroundDetector : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bool wasGrounded = playerController.m_Grounded;
-
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
 
@@ -33,5 +32,18 @@ public class PlayerGroundDetector : MonoBehaviour
         {
             playerController.OnLandEvent.Invoke();
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+
+
+            playerController.m_Grounded = true;
+        }
+        
     }
 }

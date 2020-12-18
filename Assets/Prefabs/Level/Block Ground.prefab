@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 371380129229557335}
   m_Layer: 0
   m_Name: Block Ground
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_Size.y
-      value: 0.89
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 4033729065799803569, guid: a08a277b36c676248983fe80c9baaf2a, type: 3}
       propertyPath: m_Enabled
