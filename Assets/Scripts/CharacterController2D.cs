@@ -8,14 +8,13 @@ public class CharacterController2D : MonoBehaviour
 	
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
-	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
-	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
+	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
+	[SerializeField] private Collider2D playerGroundDetector;                         
 	[SerializeField] float delayBetweenJumps = 0.05f;
 	
+	public bool m_Grounded;            // Whether or not the player is grounded.
+	 bool m_Jump;  //can only jump when not jumping
 
-	const float k_GroundedRadius = 0.6f; // Radius of the overlap circle to determine if grounded
-	private bool m_Grounded;            // Whether or not the player is grounded.
-	private bool m_Jump;
 	private Rigidbody2D m_Rigidbody2D;
 	 // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -40,34 +39,9 @@ public class CharacterController2D : MonoBehaviour
 		
 	}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-		bool wasGrounded = m_Grounded;
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-			m_Grounded = false;
-        }
-    }
+    
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-		bool wasGrounded = m_Grounded;
-
-		if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-			
-			
-			m_Grounded = true;
-		}
-		if (!wasGrounded && m_Grounded)
-        {
-			OnLandEvent.Invoke();
-		}
-
-
-			
-
-	}
+    
     public void Move(float move, bool crouch, bool jump)
 	{
 		
