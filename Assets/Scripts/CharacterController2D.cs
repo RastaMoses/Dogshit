@@ -85,5 +85,8 @@ public class CharacterController2D : MonoBehaviour
 		m_Jump = true;
     } 
 
-	
+	public void Land()
+    {
+		GetComponent<PlayerSound>().PlayLandSFX();
+    }
 }

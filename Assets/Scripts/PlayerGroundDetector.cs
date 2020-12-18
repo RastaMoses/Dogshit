@@ -30,6 +30,7 @@ public class PlayerGroundDetector : MonoBehaviour
         }
         if (!wasGrounded && playerController.m_Grounded)
         {
+            playerController.Land();
             playerController.OnLandEvent.Invoke();
         }
     }

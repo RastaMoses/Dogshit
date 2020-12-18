@@ -8,6 +8,8 @@ public class PlayerSound : MonoBehaviour
     [SerializeField] List<AudioClip> jumpSFX;
     [SerializeField] List<AudioClip> landSFX;
 
+    [SerializeField] [Range(0, 1)] float landVolume;
+    [SerializeField] [Range(0, 1)] float jumpVolume;
     AudioSource audioSource;
 
     public void PlayJumpSFX()
@@ -15,7 +17,7 @@ public class PlayerSound : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         int randomSFX = Random.Range(0, jumpSFX.Count - 1);
         var clip = jumpSFX[randomSFX];
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(clip, jumpVolume);
     }
 
     public void PlayDeathSFX()
@@ -30,6 +32,7 @@ public class PlayerSound : MonoBehaviour
         var clip = landSFX[randomSFX];
 
         audioSource.clip=clip;
+        audioSource.volume = landVolume;
         audioSource.Play();
     }
 }
