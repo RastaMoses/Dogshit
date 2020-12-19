@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,16 +8,21 @@ public class Heat : MonoBehaviour
 
     [SerializeField] Color minColor;
     [SerializeField] Color maxColor;
+    
+    [SerializeField] float acceleration= 0.2f;
 
-    float changeAmount;
+    [SerializeField] float changeAmount; //Serialized for Debug purpose
     PlayerHealth player;
-    // Start is called before the first frame update
+    SpriteRenderer spriteColor;
+    
     void Start()
     {
+        spriteColor = GetComponent<SpriteRenderer>();
+        
         
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         player = FindObjectOfType<PlayerHealth>();
@@ -30,7 +36,16 @@ public class Heat : MonoBehaviour
         {
 
             changeAmount = player.GetColorChange();
-            GetComponent<SpriteRenderer>().color = Color.Lerp(maxColor, minColor, changeAmount);
+
+            var changeFloat = Math.Pow(Convert.ToDouble(changeAmount), Convert.ToDouble(acceleration));
+                spriteColor.color = Color.Lerp(maxColor, minColor,(float)changeFloat);
+            
+                
+                
+                
+              
+            
         }
     }
+    
 }

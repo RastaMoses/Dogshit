@@ -1878,6 +1878,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heat Indicator
       objectReference: {fileID: 0}
+    - target: {fileID: 5004621821389214974, guid: 38cdc41b5b244f24194fa92738b3b863, type: 3}
+      propertyPath: maxColor.a
+      value: 0.7607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004621821389214974, guid: 38cdc41b5b244f24194fa92738b3b863, type: 3}
+      propertyPath: minColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004621821389214974, guid: 38cdc41b5b244f24194fa92738b3b863, type: 3}
+      propertyPath: acceleration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004621821389214974, guid: 38cdc41b5b244f24194fa92738b3b863, type: 3}
+      propertyPath: accelerationRateAfterPoint
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004621821389214974, guid: 38cdc41b5b244f24194fa92738b3b863, type: 3}
+      propertyPath: decelerationRateBeforePoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004621821389214974, guid: 38cdc41b5b244f24194fa92738b3b863, type: 3}
+      propertyPath: colorChangeAccelerationPoint
+      value: 0.305
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38cdc41b5b244f24194fa92738b3b863, type: 3}
 --- !u!4 &1598504391 stripped
