@@ -7,12 +7,13 @@ using TMPro;
 public class Pause : MonoBehaviour
 {
     [SerializeField] PauseAnimation pauseBackgroundAnimation;
-    [SerializeField] TextMeshProUGUI pauseText;
+    [SerializeField] Canvas pauseCanvas;
+    
     bool paused;
 
     private void Start()
     {
-        pauseText.enabled = false;
+        pauseCanvas.enabled = false;
         pauseBackgroundAnimation = FindObjectOfType<PauseAnimation>();
     }
     void Update()
@@ -35,14 +36,14 @@ public class Pause : MonoBehaviour
     {
 
         pauseBackgroundAnimation.StartAnimation();
-        pauseText.enabled = true;
+        pauseCanvas.enabled = true;
         paused = true;
         Time.timeScale = 0;
     }
 
     private void Unpause()
     {
-        pauseText.enabled = false;
+        pauseCanvas.enabled = false;
         Time.timeScale = 1;
         pauseBackgroundAnimation.StopAnimation();
         paused = false;

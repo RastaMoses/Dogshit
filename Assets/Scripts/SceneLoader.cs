@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ public class SceneLoader : MonoBehaviour
 {
   public void ReloadLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -18,7 +20,8 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        Debug.Log("Assign right index number to load menu");
+        
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }

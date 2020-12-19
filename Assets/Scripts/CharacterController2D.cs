@@ -65,7 +65,6 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (m_Jump)
             {
-				Debug.Log("Jump");
 				StartCoroutine(Jump());
 
 			}
