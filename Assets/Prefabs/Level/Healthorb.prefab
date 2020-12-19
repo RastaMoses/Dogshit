@@ -100,7 +100,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.756
-  m_Color: {r: 0, g: 0.6947198, b: 0.9716981, a: 1}
+  m_Color: {r: 1, g: 0.27400663, b: 0, a: 1}
   m_Intensity: 4.05
   m_LightVolumeOpacity: 0.365
   m_ApplyToSortingLayers: c747f34ba3ab061e00000000d98101ac

@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 1197669175}
   - component: {fileID: 1197669174}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,7 +954,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Don't Melt
+  m_text: Don't Frost
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 876a73214e8a7cc4ab245612a1c321e1, type: 2}
   m_sharedMaterial: {fileID: 1948619431796151557, guid: 876a73214e8a7cc4ab245612a1c321e1, type: 2}
@@ -1705,7 +1705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024202045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -1.23, z: 0}
+  m_LocalPosition: {x: -0.05, y: -1.16, z: 0}
   m_LocalScale: {x: 5.9568486, y: 1.8891901, z: 0.37307295}
   m_Children: []
   m_Father: {fileID: 51033986}
