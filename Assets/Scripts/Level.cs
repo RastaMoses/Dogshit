@@ -46,12 +46,16 @@ public class Level : MonoBehaviour
         else
         {
             allowRespawn = true;
-            respawnCount++;
+            
         }
         return allowRespawn;
     }
 
-    
+    public void RespawnCounterIncrease()
+        { 
+        respawnCount++;
+        }
+
     
 
     public void RespawnPlayer()
