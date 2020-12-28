@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float deathAnimationDuration = 3f;
 
     //State
+    bool dead;
     bool killingSelf;
     bool inSafeZone;
     bool safe;
@@ -37,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         playerLight = GetComponent<Light2D>();
         maxLightIntensity = playerLight.intensity;
         maxLightRadius = playerLight.pointLightOuterRadius;
@@ -140,7 +142,7 @@ public class PlayerHealth : MonoBehaviour
 
     void CheckPlayerHealth()
     {
-        if (health <= 0)
+        if (health <= 0 && !dead)
         {
             PlayerDeath();
         }
@@ -148,12 +150,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDeath()
     {
-        GetComponent<PlayerSound>().PlayDeathSFX();
+        
         if (level.GetRespawn() == true)
         {
             Instantiate(playerBlockPrefab, transform.position,Quaternion.identity);
+
             
             level.RespawnPlayer();
+            GetComponent<PlayerSound>().PlayDeathSFX();
             Destroy(gameObject);
             gameObject.SetActive(false);
             
@@ -161,13 +165,13 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            
+            dead = true;
             StartCoroutine(GameOver());
         }
     }
     private IEnumerator GameOver()
     {
-        
+        GetComponent<PlayerSound>().PlayDeathSFX();
         yield return new WaitForSeconds(deathAnimationDuration);
         FindObjectOfType<SceneLoader>().ReloadLevel();
     }

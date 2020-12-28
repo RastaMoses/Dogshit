@@ -2254,6 +2254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1351621721, guid: 94c0b4c32b25f284b95e368b3fd9590a, type: 3}
+      propertyPath: deathAnimationDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1135600082845632729, guid: 94c0b4c32b25f284b95e368b3fd9590a, type: 3}
       propertyPath: m_Name
       value: Player
