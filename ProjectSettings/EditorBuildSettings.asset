@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: 9c6f7e38556c2984ab60b3a5807d6304
   - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: 5c81e9db25ce60b438a81fad917b9763
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: ed7b91fb5096eec4a92678dea0bdc6f7
   - enabled: 1
@@ -21,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Healthorb Tutorial.unity
     guid: 79007bc1013b6c342b6459fe62d1efae
   - enabled: 1
+    path: Assets/Scenes/Scene 10.unity
+    guid: 4e827ae814a7ce940a1649b7875c2618
+  - enabled: 1
     path: Assets/Scenes/Level 4.unity
     guid: 8be9af41e48c4be439f55ba19391edd6
   - enabled: 1
@@ -30,11 +36,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 6.unity
     guid: 812490e8c66b0f84daee63283e780874
   - enabled: 1
-    path: Assets/Scenes/Level 7.unity
-    guid: 914f232811002c340acf5ab679c3374c
+    path: Assets/Scenes/Scene 9.unity
+    guid: f1703dfc7cd199641bfe96e6d306b93d
   - enabled: 1
     path: Assets/Scenes/Level 8.unity
     guid: 6294d5c2fafb5a14d8a3ea9efb3fa697
+  - enabled: 1
+    path: Assets/Scenes/Scene 11.unity
+    guid: e24d5ffedb1128447bb4ac907fb1a47e
+  - enabled: 1
+    path: Assets/Scenes/Level 7.unity
+    guid: 914f232811002c340acf5ab679c3374c
   - enabled: 1
     path: Assets/Scenes/Endscreen.unity
     guid: 7b0e10b73bc0c614fb64396c2c88fe0a
