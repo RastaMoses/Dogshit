@@ -371,10 +371,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0788b85ceff074a93058786fadb06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos1: {fileID: 0}
-  pos2: {fileID: 0}
+  pos1: {fileID: 844340248}
+  pos2: {fileID: 689414820}
   speed: 1.2
-  startPos: {fileID: 0}
+  startPos: {fileID: 844340248}
   activateOnStart: 0
 --- !u!1001 &4059069668924471181
 PrefabInstance:
