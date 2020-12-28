@@ -153,14 +153,17 @@ public class PlayerHealth : MonoBehaviour
         
         if (level.GetRespawn() == true)
         {
-            Instantiate(playerBlockPrefab, transform.position,Quaternion.identity);
-
-            
-            level.RespawnPlayer();
-            GetComponent<PlayerSound>().PlayDeathSFX();
-            Destroy(gameObject);
-            gameObject.SetActive(false);
-            
+            GetComponent<BoxCollider2D>().enabled = false;
+            if (FindObjectsOfType<PlayerHealth>().Length == 1)
+            {
+                Instantiate(playerBlockPrefab, transform.position, Quaternion.identity);
+                level.RespawnPlayer();
+                level.RespawnCounterIncrease();
+                Debug.Log("respawn player");
+                GetComponent<PlayerSound>().PlayDeathSFX();
+                Destroy(gameObject);
+                gameObject.SetActive(false);
+            }           
         }
         else
         {
