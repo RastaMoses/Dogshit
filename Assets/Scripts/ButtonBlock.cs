@@ -14,5 +14,6 @@ public class ButtonBlock : MonoBehaviour
             devicesActivated[i].Activate();
         }
         GetComponent<SpriteRenderer>().sprite = pushedButtonSprite;
+        GetComponent<AudioSource>().Play();
     }
 }

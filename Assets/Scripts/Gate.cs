@@ -9,21 +9,31 @@ public class Gate : MonoBehaviour
     [SerializeField] bool activateOnStart = false;
     [SerializeField] bool delayBeforeMove = false;
     [SerializeField] float delay = 0f;
-
+    [SerializeField] AudioSource audioSource;
     //State
     
     RemoteActivator remoteActivator;
     bool addDelay;
     bool activated;
     Vector3 nextPos;
+    bool pulsePlayed = false;
     
     // Start is called before the first frame update
     void Start()
     {
+        if (GetComponentInParent<RemoteActivator>())
+        {
+            remoteActivator = GetComponentInParent<RemoteActivator>();
+        }
+        else
+        {
+            Debug.LogError(gameObject.name + "No Remote Activator Component found");
+        }
         activated = false;
         if (activateOnStart)
         {
             activated = true;
+            
         }
 
         if (startToPos1)
@@ -50,8 +60,8 @@ public class Gate : MonoBehaviour
     {
         if (!activateOnStart)
         {
-            remoteActivator = GetComponentInParent<RemoteActivator>();
             activated = remoteActivator.GetActivated();
+            
         }
         
         if (activated)
@@ -62,6 +72,12 @@ public class Gate : MonoBehaviour
             }
             else
             {
+                if (!pulsePlayed)
+                {
+                    StartCoroutine(remoteActivator.PulseLight());
+                    pulsePlayed = true;
+                    audioSource.Play();
+                }
                 Move();
             }
         }

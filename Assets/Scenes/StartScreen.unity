@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Don't Frost
+  m_text: Don't Freeze
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 876a73214e8a7cc4ab245612a1c321e1, type: 2}
   m_sharedMaterial: {fileID: 1948619431796151557, guid: 876a73214e8a7cc4ab245612a1c321e1, type: 2}
