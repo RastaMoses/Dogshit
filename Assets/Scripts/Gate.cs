@@ -10,17 +10,20 @@ public class Gate : MonoBehaviour
     [SerializeField] bool delayBeforeMove = false;
     [SerializeField] float delay = 0f;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] bool activateOnce;
     //State
     
     RemoteActivator remoteActivator;
     bool addDelay;
     bool activated;
+    bool on;
     Vector3 nextPos;
     bool pulsePlayed = false;
     
     // Start is called before the first frame update
     void Start()
     {
+
         if (GetComponentInParent<RemoteActivator>())
         {
             remoteActivator = GetComponentInParent<RemoteActivator>();
@@ -29,10 +32,11 @@ public class Gate : MonoBehaviour
         {
             Debug.LogError(gameObject.name + "No Remote Activator Component found");
         }
+        on = false;
         activated = false;
         if (activateOnStart)
         {
-            activated = true;
+            on = true;
             
         }
 
@@ -62,9 +66,16 @@ public class Gate : MonoBehaviour
         {
             activated = remoteActivator.GetActivated();
             
+            if (activated)
+            {
+                on = true;
+
+                remoteActivator.Deactivate();
+            }
+            
         }
         
-        if (activated)
+        if (on)
         {
             if (addDelay)
             {
@@ -94,19 +105,28 @@ public class Gate : MonoBehaviour
     
     private void Move()
     {
-
+        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
         if (transform.position == pos1.position)
         {
             nextPos = pos2.position;
-            
+
+            if (activateOnce)
+            {
+                on = false;
+            }
+
         }
         else if (transform.position == pos2.position)
         {
-            nextPos = pos1.position;
             
+            nextPos = pos1.position;
+            if (activateOnce)
+            {
+                on = false;
+            }
+
         }
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
-        
+
     }
 
     

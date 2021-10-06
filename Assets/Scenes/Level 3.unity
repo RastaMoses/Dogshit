@@ -2244,6 +2244,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1079986848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9157611238098488666, guid: 523bc4bb1dfb0114d8b327fe3a4090c1, type: 3}
+  m_PrefabInstance: {fileID: 6483989022182811024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1088385914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2114907867182842386, guid: 8cbf34bcb2d36f140bce0e37d4c0c8c5, type: 3}
@@ -2510,12 +2515,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4290676254086318353, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
       propertyPath: devicesActivated.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4290676254086318353, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
       propertyPath: devicesActivated.Array.data[0]
       value: 
       objectReference: {fileID: 1778888432}
+    - target: {fileID: 4290676254086318353, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
+      propertyPath: devicesActivated.Array.data[1]
+      value: 
+      objectReference: {fileID: 1013104057}
     - target: {fileID: 4290676254086318355, guid: df6205ae2dd90a749b9437b9238b885f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3819,6 +3828,18 @@ PrefabInstance:
     - target: {fileID: 1618608226521049999, guid: 523bc4bb1dfb0114d8b327fe3a4090c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993769449934110744, guid: 523bc4bb1dfb0114d8b327fe3a4090c1, type: 3}
+      propertyPath: pos2
+      value: 
+      objectReference: {fileID: 1079986848}
+    - target: {fileID: 8993769449934110744, guid: 523bc4bb1dfb0114d8b327fe3a4090c1, type: 3}
+      propertyPath: startToPos1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993769449934110744, guid: 523bc4bb1dfb0114d8b327fe3a4090c1, type: 3}
+      propertyPath: activateOnce
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 523bc4bb1dfb0114d8b327fe3a4090c1, type: 3}

@@ -16,10 +16,16 @@ public class RemoteActivator : MonoBehaviour
     {
         activated = true;
     }
+    
+    public void Deactivate()
+    {
+        activated = false;
+    }
 
     public bool GetActivated()
     {
         return activated;
+        
     }
 
     public IEnumerator PulseLight()
